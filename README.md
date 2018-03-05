@@ -1,0 +1,2 @@
+# python
+pythom exercises
