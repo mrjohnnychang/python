@@ -198,3 +198,106 @@ print flatten(n)
 #prints [1,2,3,4,5,6,7,8,9]
 
 
+#number guessing game:
+from random import randint
+
+# Generates a number from 1 through 10 inclusive
+random_number = randint(1, 10)
+
+guesses_left = 3
+# Start your game!
+while guesses_left > 0:
+  guess = int(raw_input("Your guess: "))
+  guesses_left -= 1
+  if guess == random_number:
+    print "You win!"
+    break
+    pass
+else:
+  print "You lose."
+  
+  
+#loop note1
+  hobbies = []
+
+# Add your code below!
+for i in range (3):
+  hobby = str(raw_input("What is your hobby? "))
+  hobbies.append(hobby)
+print hobbies
+
+#loop note 2, print dictionary key and value
+d = {'a': 'apple', 'b': 'berry', 'c': 'cherry'}
+for key in d:
+  # Your code here!
+  print key, d[key]
+
+#enumerate note
+choices = ['pizza', 'pasta', 'salad', 'nachos']
+
+print 'Your choices are:'
+for index, item in enumerate(choices):
+  print index+1, item
+
+#zip note, zip creates a pair of elements when passing 2 or more lists
+list_a = [3, 9, 17, 15, 19]
+list_b = [2, 4, 8, 10, 30, 40, 50, 60, 70, 80, 90]
+for a, b in zip(list_a, list_b):
+  # Add your code here!
+  if a > b:
+    print a
+    pass
+  else:
+    print b
+
+#calculate sum of digits
+def digit_sum(n):
+  x= 0
+  y = 0
+  while n > 9:
+    x = n % 10
+    y = x + y
+    n = n // 10
+  else:
+    y = y + n
+  return y
+
+print digit_sum(4444)
+
+
+  
+#calculate factorial
+def factorial(x):
+  y = 1
+  while x > 1:
+    y = x * y
+    x -= 1
+  else:
+    return y
+  return y
+
+print factorial(0)
+
+#prime number checker:
+def is_prime(x):
+  if x < 2:
+    return False
+  elif x == 2:
+    return True
+  elif x == 3:
+    return True
+  else:
+    for n in range(2, x-1):
+      if x % n == 0:
+        return False
+    return True
+  
+  
+#reverse a word
+def reverse(text):
+  a = []
+  for i in range(0, len(text)):
+    a.append(text[len(text) - (i + 1)])
+  return "".join(a)
+
+print reverse("pearl")
