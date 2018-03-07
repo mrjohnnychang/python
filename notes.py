@@ -301,3 +301,109 @@ def reverse(text):
   return "".join(a)
 
 print reverse("pearl")
+
+
+#anti-vowel
+def anti_vowel(text):
+  a = []
+  for i in range(0, len(text)):
+    if text[i] != "a" and text[i] != "e" and text[i] != "i" and text[i] != "o" and text[i] != "u" and text[i] != "A" and text[i] != "E" and text[i] != "I" and text[i] != "O" and text[i] != "U":
+      a.append(text[i])
+      pass
+  return "".join(a)
+
+print anti_vowel("pearl")
+
+
+score = {"a": 1, "c": 3, "b": 3, "e": 1, "d": 2, "g": 2, 
+         "f": 4, "i": 1, "h": 4, "k": 5, "j": 8, "m": 3, 
+         "l": 1, "o": 1, "n": 1, "q": 10, "p": 3, "s": 1, 
+         "r": 1, "u": 1, "t": 1, "w": 4, "v": 4, "y": 4, 
+         "x": 8, "z": 10}
+
+def scrabble_score(word):
+  word = word.lower()
+  x= 0
+  for i in word:
+    print i
+    print score[i]
+    #score[i] is the int score for the letter.  e.g. in "pearl", p has score 3,  i = p and hence score[p] is 3
+    #add the score to x (total)
+    x += score[i]
+    print x
+  return x
+#testing
+print scrabble_score("pearl")
+
+
+#censor text with word
+def censor(text, word):
+  #star = * times number of letters in word
+  star = "*" * len(word)
+  #.split() separates the words in a string. e.g. "the day" becomes ['the', 'day']
+  split = text.split()
+  for i in range(len(split)):
+    #i is the index: 0,1,2,3
+    #split[i] is the separated words: the, day
+    #checks if split[i] matches the word to censor
+    if split[i] == word:
+      #if matches, replaces word with stars
+      split[i] = star
+      pass
+  #joins separated words so it becomes a string
+  return " ".join(split)
+
+print censor("the day is fine", "fine")
+
+
+#count number of times a number show up in a list
+def count(sequence, item):
+  x = 0
+  for i in sequence:
+    if item == i:
+      x += 1
+      pass
+  return x
+#test
+print count([1, 2, 1, 1], 1)
+
+
+#purifies all odd number out of a list
+def purify(x):
+  a = []
+  for i in x:
+    if i % 2 == 0:
+      a.append(i)
+  return a
+#test
+print purify([1,2,3])
+
+#multiple all numbers in a list, use range(len(x)) because it is a list
+def product(x):
+  y = 1
+  for i in range(len(x)):
+    y = x[i] * y
+  return y
+#test
+print product([4,5,5])
+
+
+#remove duplicates in a list
+def remove_duplicates(l):
+  a = []
+  for i in range(len(l)):
+    if l[i] not in a:
+      a.append(l[i])
+  return a
+#test
+print remove_duplicates([1, 1, 2, 2])
+
+
+#def median(l):
+  l = sorted(l)
+  if len(l) % 2 != 0:
+    return l[len(l)/2]
+  else:
+    return (l[len(l)/2] + l[((len(l)-1)/2)]) / 2.0
+#test
+print median([7, 3, 1, 4])
