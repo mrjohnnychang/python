@@ -445,3 +445,67 @@ variance = grades_variance(grades)
 print "The standard deviation is: ", grades_std_deviation(variance)
 
 
+#dictionary note5
+my_dict = {
+  "key1": "value1",
+  "key2": "value2",
+  "key3": "value3"
+}
+#returns array in dictionary
+print my_dict.items()
+#return keys in dictionary
+print my_dict.keys()
+#return values in dictionary
+print my_dict.values()
+
+for key in my_dict:
+  print key, my_dict[key]
+  
+  
+#print only even numbers (0-50)
+evens_to_50 = [i for i in range(51) if i % 2 == 0]
+print evens_to_50
+
+
+#lists note1
+doubles_by_3 = [x * 2 for x in range(1, 6) if (x * 2) % 3 == 0]
+# hint: range(1,6) is a list of 1,2,3,4,5
+even_squares = [x ** 2 for x in range(1, 11) if x % 2 == 0]
+print "even_squares: ", even_squares
+cubes_by_four = [x ** 3 for x in range(1, 11) if (x**3) % 4 == 0]
+print cubes_by_four
+
+#lists note2
+l = [i ** 2 for i in range(1, 11)]
+# Should be [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+#[start:end:stride(steps)]
+print l[2:9:2]
+#prints [9, 25, 49, 81]
+
+#lists note3
+#list of 1 to 21
+to_21 = [x for x in range(1,22)]
+#just the odds between 1 to 21
+odds = to_21[::2]
+#middle_third equals to 8 to 14
+middle_third = to_21[7:14]
+
+#lambda note
+my_list = range(16)
+filter(lambda x: x % 3 == 0, my_list)
+
+languages = ["HTML", "JavaScript", "Python", "Ruby"]
+# Add arguments to the filter()
+print filter(lambda x: x == "Python", languages)
+
+squares = [x ** 2 for x in range(1, 11)]
+#prints 36,49,64
+print filter(lambda x: x >= 30 and x <= 70, squares)
+
+threes_and_fives = [x for x in range(1, 16) if x % 3 == 0 or x % 5 == 0]
+garbled = "IXXX aXXmX aXXXnXoXXXXXtXhXeXXXXrX sXXXXeXcXXXrXeXt mXXeXsXXXsXaXXXXXXgXeX!XX"
+message = filter(lambda x: x != "X", garbled)
+print message
+
+
