@@ -541,3 +541,48 @@ def flip_bit(number, n):
   nmask = (0b1 << n-1)
   result = (number ^ nmask)
   return bin(result)
+
+
+#class, method (__init__) and member variables (is_alive)
+class Animal(object):
+  """Makes cute animals."""
+  #member variable is_alive
+  is_alive = True
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+zebra = Animal("Jeffrey", 2)
+giraffe = Animal("Bruce", 1)
+panda = Animal("Chad", 7)
+
+print zebra.name, zebra.age, zebra.is_alive
+print giraffe.name, giraffe.age, giraffe.is_alive
+print panda.name, panda.age, panda.is_alive
+
+
+
+#method (description), instance (Animal("hippo", 8))
+class Animal(object):
+  """Makes cute animals."""
+  is_alive = True
+  health = "good"
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+  # Add your method here!
+  def description(self):
+    print self.name
+    print self.age
+
+hippo = Animal("hippo", 8)
+hippo.description()
+
+sloth = Animal("sloth", 9)
+ocelot = Animal("ocelot", 10)
+
+print hippo.health
+print sloth.health
+print ocelot.health
+
+
