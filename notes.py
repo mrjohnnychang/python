@@ -509,3 +509,35 @@ message = filter(lambda x: x != "X", garbled)
 print message
 
 
+#bitwise
+print 5 >> 4  # Right Shift
+print 5 << 1  # Left Shift
+print 8 & 5   # Bitwise AND
+print 9 | 4   # Bitwise OR
+print 12 ^ 42 # Bitwise XOR
+print ~88     # Bitwise NOT
+
+#check if bit4 is on (1)
+def check_bit4(input):
+  bitfour = 0b1000
+  if (bitfour & input) > 0:
+    return "on"
+  else:
+    return "off"
+  
+#turn 3rd bit on
+a = 0b10111011
+third = 0b100
+print bin(a | third)
+
+#flip all bits
+a = 0b11101110
+flipbit = 0b11111111
+print bin(a ^ flipbit)
+
+#flip the n bit
+def flip_bit(number, n):
+  #flip the n bit
+  nmask = (0b1 << n-1)
+  result = (number ^ nmask)
+  return bin(result)
