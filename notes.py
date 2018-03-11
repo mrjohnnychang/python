@@ -740,3 +740,65 @@ class Point3D(object):
 
 my_point = Point3D(1, 2, 3)
 print my_point
+
+
+#I/O to file
+my_list = [i ** 2 for i in range(1, 11)]
+# Generates a list of squares of the numbers 1 - 10
+
+#f is the variable for file object, w is write argument
+f = open("output.txt", "w")
+
+for item in my_list:
+  f.write(str(item) + "\n")
+f.close()
+
+#r+ argument allows read and write to output.txt
+#r argument allows read only
+#w argument allows write only
+my_file = open("output.txt", "r+")
+my_file.close()
+
+
+#read function
+my_file = open("output.txt", "r")
+#read function reads the file
+print my_file.read()
+my_file.close()
+
+#readline function
+my_file = open("text.txt", "r")
+#read line1
+print my_file.readline()
+#read line2
+print my_file.readline()
+#read line3
+print my_file.readline()
+#need to close files
+my_file.close()
+
+
+#read & write, open & close
+# Use a file handler to open a file for writing
+write_file = open("text.txt", "w")
+
+# Open the file for reading
+read_file = open("text.txt", "r")
+
+# Write to the file
+write_file.write("Not closing files is VERY BAD.")
+write_file.close()
+
+print read_file.read()
+read_file.close()
+
+
+#use .close() to close an open file
+with open("text.txt", "w") as my_file:
+  my_file.write("write data!")
+  #if my_file is still open, close it
+  if my_file.closed == False:
+    my_file.close()
+    
+#confirm that my_file is closed
+print my_file.closed
