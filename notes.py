@@ -586,3 +586,47 @@ print sloth.health
 print ocelot.health
 
 
+#shopping cart
+class ShoppingCart(object):
+  """Creates shopping cart objects
+  for users of our fine website."""
+  items_in_cart = {}
+  def __init__(self, customer_name):
+    self.customer_name = customer_name
+
+  def add_item(self, product, price):
+    """Add product to the cart."""
+    if not product in self.items_in_cart:
+      self.items_in_cart[product] = price
+      print product + " added."
+    else:
+      print product + " is already in the cart."
+
+  def remove_item(self, product):
+    """Remove product from the cart."""
+    if product in self.items_in_cart:
+      del self.items_in_cart[product]
+      print product + " removed."
+    else:
+      print product + " is not in the cart."
+
+#ShoppingCart class has __init__() that takes a customer name
+my_cart = ShoppingCart("Name")
+my_cart.add_item("Pizza", 8)
+
+
+#inherited class
+class Shape(object):
+  """Makes shapes!"""
+  def __init__(self, number_of_sides):
+    self.number_of_sides = number_of_sides
+
+#Triangle is the new class, Shape is the class which Triangle inherits
+class Triangle(Shape):
+  def __init__(self, side1, side2, side3):
+    self.side1 = side1
+    self.side2 = side2
+    self.side3 = side3
+    
+    
+ 
