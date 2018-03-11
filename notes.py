@@ -629,4 +629,114 @@ class Triangle(Shape):
     self.side3 = side3
     
     
- 
+#class notes1
+class Employee(object):
+  """Models real-life employees!"""
+  def __init__(self, employee_name):
+    self.employee_name = employee_name
+
+  def calculate_wage(self, hours):
+    self.hours = hours
+    return hours * 20.00
+
+# child class (PartTimeEmployee), parent class is Employee
+class PartTimeEmployee(Employee):
+  def calculate_wage(self, hours):
+    self.hours = hours
+    return hours * 12.00
+  def full_time_wage(self, hours):
+    return super(PartTimeEmployee, self).calculate_wage(hours)
+
+#creating instance (milton)
+#PartTimeEmployee is a class
+milton = PartTimeEmployee("Name")
+#calling method (full_time_wage) on instance (milton)
+print milton.full_time_wage(8)
+
+
+#class notes2 Triangles
+#need to inherit from object!!
+#class is Triangle
+class Triangle(object):
+  def __init__(self, angle1, angle2, angle3):
+    self.angle1 = angle1
+    self.angle2 = angle2
+    self.angle3 = angle3
+  number_of_sides = 3
+
+  def check_angles(self):
+    if (self.angle1 + self.angle2 + self.angle3 == 180):
+      return True
+    else:
+      return False
+
+#passing 3 instance (90, 30, 60) to Triangle
+my_triangle = Triangle(90, 30, 60)
+print my_triangle.number_of_sides
+print my_triangle.check_angles()
+
+class Equilateral(Triangle):
+  angle = 60
+  def __init__(self):
+    self.angle1 = self.angle
+    self.angle2 = self.angle
+    self.angle3 = self.angle
+    
+    
+#class notes3 Cars
+class Car(object):
+  #member variable (condition)
+  condition = "new"
+  #Car() takes in 3 arguments (model, color, mpg)
+  def __init__(self, model, color, mpg):
+    self.model = model
+    self.color = color
+    self.mpg = mpg
+  
+  def display_car(self):
+    return "This is a %s %s with %s MPG." % (self.color, self.model, self.mpg)
+  
+  def drive_car(self):
+    self.condition = "used"
+    
+#object (my_car) that is an instance of Class (Car)
+#provides 3 inputs ("DeLorean", "silver", 88) to Car()
+my_car = Car("DeLorean", "silver", 88)
+
+#the object (my_car) has a member variable named (condition) since my_car is an instance of Car
+print my_car.condition
+print my_car.display_car()
+
+#changes condition from new to used
+my_car.drive_car()
+#print used
+print my_car.condition
+
+class ElectricCar(Car):
+  def __init__(self, model, color, mpg, battery_type):
+    self.model = model
+    self.color = color
+    self.mpg = mpg
+    self.battery_type = battery_type
+
+  def drive_car(self):
+    self.condition = "like new"
+
+my_car = ElectricCar("MoltenSalt", "blue", 888, "molten salt")
+my_car.drive_car()
+print my_car.condition
+
+
+#representation method
+class Point3D(object):
+  def __init__(self, x, y, z):
+    self.x = x
+    self.y = y
+    self.z = z
+  #representation method
+  def __repr__(self):
+  #represent the object as "(%d, %d, %d)
+    return "(%d, %d, %d)" % (self.x, self.y, self.z)
+
+my_point = Point3D(1, 2, 3)
+print my_point
