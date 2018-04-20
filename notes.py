@@ -71,6 +71,7 @@ def compute_bill(food):
       stock[i] -= 1
   return total
 
+#to spell a string backwards, use string[::-1]
 
 #dictionary note4
 lloyd = {
