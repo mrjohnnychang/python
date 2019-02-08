@@ -6,6 +6,10 @@ for i in start_list:
 square_list.sort()
 print square_list
 
+#remove item from list:
+backpack = ['xylophone', 'dagger', 'tent', 'bread loaf']
+backpack.remove('dagger')
+
 #Dictionary:
 # Assigning a dictionary with three key-value pairs to residents:
 residents = {'Puffin' : 104, 'Sloth' : 105, 'Burmese Python' : 106}
@@ -13,8 +17,6 @@ print residents['Puffin'] # Prints Puffin's room number
 print residents['Sloth']
 print residents['Burmese Python']
 dict_name[key] = new_value
-backpack = ['xylophone', 'dagger', 'tent', 'bread loaf']
-backpack.remove('dagger')
 
 #dictionary note 2
 inventory = {
@@ -266,7 +268,6 @@ def digit_sum(n):
 print digit_sum(4444)
 
 
-  
 #calculate factorial
 def factorial(x):
   y = 1
